@@ -9,6 +9,11 @@ from scraper.ripley import obtener_ripley
 from utils.filtros import filtrar
 from notificaciones.bot import enviar_si_nueva
 from database.db import conectar_db, cerrar_db
+import os
+os.makedirs("logs", exist_ok=True)  # crea la carpeta si no existe
+
+import logging
+logging.basicConfig(filename='logs/bot.log', level=logging.INFO)
 
 logging.basicConfig(filename='logs/bot.log', level=logging.INFO)
 
