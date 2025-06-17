@@ -1,12 +1,13 @@
 import asyncio
 import logging
+
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pytz import timezone
 from scraper.falabella import obtener_falabella
 from scraper.paris import obtener_paris
 from scraper.ripley import obtener_ripley
 from utils.filtros import filtrar
-from telegram import enviar_si_nueva
+from notificaciones.bot import enviar_si_nueva
 from database.db import conectar_db, cerrar_db
 
 logging.basicConfig(filename='logs/bot.log', level=logging.INFO)
